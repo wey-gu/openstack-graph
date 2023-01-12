@@ -550,6 +550,11 @@ $ neutron port-list
 +--------------------------------------+------+----------------------------------+-------------------+-------------------------------------------------------------------------------------------------------------+
 ```
 
+Or we could verify the resources from OpenStack Dashboard(http://node0_ip/), with user: admin, password: labstack.
+
+<img width="2032" alt="Dashboard view Openstack Network Resources" src="https://user-images.githubusercontent.com/1651790/212019987-f89362b1-5dcc-4107-a443-e60b642c0e04.png">
+
+
 We could generate resource graph with vitrage client:
 
 ```bash
