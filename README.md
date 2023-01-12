@@ -1,4 +1,4 @@
-OpenStack Graph Demo
+## OpenStack Graph Demo
 
 I would like to create a demo project on how the graph tech helps Ops of the Infra, and I will start from a system like OpenStack to do the job.
 
@@ -44,6 +44,10 @@ And the infra resources look like this:
 And after this data is added on top of the previous graph, it looks like this:
 
 ![](https://user-images.githubusercontent.com/1651790/212102993-849fd470-1e44-4706-af3f-dfb8500bd978.png)
+
+**How to leverage the Graph**
+
+WIP
 
 ## Demo
 
