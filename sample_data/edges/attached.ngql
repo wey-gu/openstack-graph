@@ -1,0 +1,12 @@
+INSERT EDGE `attached`(edge_type) VALUES "44a7a252-f149-43cc-8cf6-4572bec5500f"->"server-0":("attached");
+INSERT EDGE `attached`(edge_type) VALUES "96db053b-fe6a-44b6-8041-06403b871953"->"server-1":("attached");
+INSERT EDGE `attached`(edge_type) VALUES "6734d4a1-3342-4f9f-87b5-ca365689dd39"->"server-1":("attached");
+INSERT EDGE `attached`(edge_type) VALUES "ffaeb199-47f4-4d95-89b2-97fba3c1bcfe"->"server-1":("attached");
+INSERT EDGE `attached`(edge_type) VALUES "2de6d2fa-6f3c-4435-a8de-5bd2c4653f0f"->"server-2":("attached");
+INSERT EDGE `attached`(edge_type) VALUES "99187cfc-ceea-496a-a572-a9bb14e586ed"->"server-2":("attached");
+INSERT EDGE `attached`(edge_type) VALUES "c9db7c2e-c712-49d6-8019-14b82de8542d"->"server-3":("attached");
+INSERT EDGE `attached`(edge_type) VALUES "344ebd38-374d-4dd5-bade-356d0cbf364c"->"server-3":("attached");
+INSERT EDGE `attached`(edge_type) VALUES "volume-2"->"server-4":("attached");
+INSERT EDGE `attached`(edge_type) VALUES "volume-2"->"server-3":("attached");
+INSERT EDGE `attached`(edge_type) VALUES "d27355a1-23cd-4955-89d0-dd2515113444"->"server-4":("attached");
+INSERT EDGE `attached`(edge_type) VALUES "56d2d86a-f071-4cf6-99fc-f3fce740444f"->"server-5":("attached");

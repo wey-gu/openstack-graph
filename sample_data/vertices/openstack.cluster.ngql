@@ -1,0 +1,1 @@
+INSERT VERTEX `openstack_cluster`(name,state,uuid,graph_index) VALUES "openstack.cluster":("openstack.cluster","available","OpenStack Cluster","2");

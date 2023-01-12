@@ -1,0 +1,3 @@
+INSERT VERTEX `nova_zone`(name,state,uuid,graph_index) VALUES "nova":("nova","available","nova","1");
+INSERT VERTEX `nova_zone`(name,state,uuid,graph_index) VALUES "zone_a":("zone_a","available","zone_a","25");
+INSERT VERTEX `nova_zone`(name,state,uuid,graph_index) VALUES "zone_b":("zone_b","available","zone_b","26");

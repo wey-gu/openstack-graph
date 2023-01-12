@@ -1,0 +1,2 @@
+INSERT VERTEX `nova_host`(name,state,uuid,graph_index) VALUES "node0":("node0","available","node0","0");
+INSERT VERTEX `nova_host`(name,state,uuid,graph_index) VALUES "node1":("node1","available","node1","6");

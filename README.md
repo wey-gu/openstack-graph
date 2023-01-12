@@ -69,6 +69,10 @@ Where:
 
 
 
+Here I put the generated data into `sample_data` of this repo for reference purposes, too.
+
+
+
 ## Environment Setup
 
 ### Prepare for multiple nodes in a single Linux Server

@@ -1,0 +1,11 @@
+CREATE SPACE IF NOT EXISTS openstack (partition_num=3, replica_factor=1, vid_type=fixed_string(128));
+USE openstack;
+CREATE TAG `nova_host`(`name` string NULL, `state` string NULL, `uuid` string NULL, `graph_index` string NULL)
+CREATE TAG `nova_zone`(`name` string NULL, `state` string NULL, `uuid` string NULL, `graph_index` string NULL)
+CREATE TAG `openstack_cluster`(`name` string NULL, `state` string NULL, `uuid` string NULL, `graph_index` string NULL)
+CREATE TAG `neutron_network`(`name` string NULL, `state` string NULL, `uuid` string NULL, `graph_index` string NULL)
+CREATE TAG `cinder_volume`(`name` string NULL, `state` string NULL, `uuid` string NULL, `graph_index` string NULL, `volume_type` string NULL, `attachments` string NULL)
+CREATE TAG `neutron_port`(`name` string NULL, `state` string NULL, `uuid` string NULL, `graph_index` string NULL, `ip_addresses` string NULL)
+CREATE TAG `nova_instance`(`name` string NULL, `state` string NULL, `uuid` string NULL, `graph_index` string NULL, `instance_name` string NULL)
+CREATE EDGE `contains`(`edge_type` string NULL)
+CREATE EDGE `attached`(`edge_type` string NULL)
