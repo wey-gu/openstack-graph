@@ -1,6 +1,24 @@
 OpenStack Graph Demo
 
-> On how the graph tech helps Ops Infra like OpenStack
+I would like to create a demo project on how the graph tech helps Ops of the Infra, and I will start from a system like OpenStack to do the job.
+
+**Resource monitoring**
+
+We could watch the component where resources being created will naturally report to, in OpenStack, subscribing to the message bus on specific topics per each service (nova, neutron, Aodh and heat, etc) will do the job.
+
+Luckily, OpenStack Vitrage already provides this capability out of the box! With it, we could have the resources/alarms in a single graph view from [one vitrage API call](https://docs.openstack.org/vitrage/zed/contributor/vitrage-api.html#get-topology).
+
+We could do equivalent things for any other infra systems like K8s, too.
+
+![](https://user-images.githubusercontent.com/1651790/212026019-6f06683c-f3ad-4d32-bb88-56d2b4c129de.png)
+
+**Graph ETL**
+
+I created a demo [utils/vitrage_to_graph.py](utils/vitrage_to_graph.py) to call vitrage API to generate full graph of the whole Infra, and then create DDL and DML queries to load data into NebulaGraph in Batch, this is only for demo/PoC purposes, in real world case, we could do streaming things in similar ways, too.
+
+And the infra resources looks like this:
+
+![](https://user-images.githubusercontent.com/1651790/212024265-ca374ea0-fd60-4e68-84e2-512f5f3ff9a6.png)
 
 ## Demo
 
@@ -74,10 +92,6 @@ Here I put the generated data into `sample_data` of this repo for reference purp
 
 - Install a NebulaGraph in one command with [Nebula-Up](https://github.com/wey-gu/nebula-up)
 - Following [here](https://github.com/wey-gu/openstack-graph/tree/main/sample_data) to load the Graph Data into [NebulaGraph](https://github.com/vesoft-inc/nebula)
-
-We could see the Graph Data loaded with NebulaGraph Explorer:
-
-![](https://user-images.githubusercontent.com/1651790/212024265-ca374ea0-fd60-4e68-84e2-512f5f3ff9a6.png)
 
 
 ## Environment Setup
