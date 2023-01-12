@@ -68,9 +68,16 @@ Where:
 - `vertices` contains all vertices, and the corresponding `ngql` file is the DML to load the data, `csv` is the raw data
 
 
+#### Load it to NebulaGraph
 
 Here I put the generated data into `sample_data` of this repo for reference purposes, too.
 
+- Install a NebulaGraph in one command with [Nebula-Up](https://github.com/wey-gu/nebula-up)
+- Following [here](https://github.com/wey-gu/openstack-graph/tree/main/sample_data) to load the Graph Data into [NebulaGraph](https://github.com/vesoft-inc/nebula)
+
+We could see the Graph Data loaded with NebulaGraph Explorer:
+
+![](https://user-images.githubusercontent.com/1651790/212024265-ca374ea0-fd60-4e68-84e2-512f5f3ff9a6.png)
 
 
 ## Environment Setup
