@@ -1,0 +1,4 @@
+CREATE EDGE IF NOT EXISTS used_by();
+INSERT EDGE used_by() VALUES "cirros-0.5.2-x86_64-disk" -> "server-5":();
+INSERT EDGE used_by() VALUES "cirros_mod_from_volume-1" -> "server-4":();
+INSERT EDGE used_by() VALUES "cirros_mod_from_volume-1" -> "server-0":();

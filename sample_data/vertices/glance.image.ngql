@@ -1,0 +1,3 @@
+CREATE TAG image (id string, name string, status string, size int, min_disk int, min_ram int, created_at string, updated_at string);
+INSERT VERTEX image (id, name, status, size, min_disk, min_ram, created_at, updated_at) VALUES "cirros_mod_from_volume-1":("437c721d-3a39-4572-9f6e-1234aa8d2123", "cirros_mod_from_volume-1", "active", 1073741824, 0, 0, "2023-01-11T10:09:36Z", "2023-01-11T10:09:45Z");
+INSERT VERTEX image (id, name, status, size, min_disk, min_ram, created_at, updated_at) VALUES "cirros-0.5.2-x86_64-disk":("c2f047f0-faf9-4985-ae4f-bbccf9ae25dc", "cirros-0.5.2-x86_64-disk", "active", 16300544, 0, 0, "2023-01-11T08:35:30Z", "2023-01-11T08:35:32Z");

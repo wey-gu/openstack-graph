@@ -1,0 +1,2 @@
+CREATE TAG IF NOT EXISTS volume_snapshot( id string, name string, description string, status string, size int, volume_id string);
+INSERT VERTEX volume_snapshot(id, name, description, status, size, volume_id) VALUES "snapshot-202301111800-volume-1":("0f7b514a-e4dc-45a5-b5ca-30ab44599667", "snapshot-202301111800-volume-1", "None", "available", 1, "eeb520cd-b253-4c2c-beaf-5b2e7cd1c4b7");

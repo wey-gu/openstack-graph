@@ -39,6 +39,7 @@ def get_nebula_graph(vitrage_topology):
     graph_index_to_vid = {}
 
     for node in data["nodes"]:
+        # this is for demo purposes only, we even assume name is unique
         vertex_id = (
             node["name"] if ("name" in node and node.get("name")) else node["id"]
         )

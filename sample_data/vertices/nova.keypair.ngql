@@ -1,0 +1,2 @@
+CREATE TAG keypair (id string, name string, fingerprint string);
+INSERT VERTEX keypair (id, name, fingerprint) VALUES "key-0":("key-0", "key-0", "a3:7c:13:40:06:1b:e8:24:7c:20:f8:c0:a8:6b:51:3f");

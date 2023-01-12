@@ -1,0 +1,2 @@
+CREATE EDGE IF NOT EXISTS created_from();
+INSERT EDGE created_from() VALUES "snapshot-202301111800-volume-1" -> "volume-1":();

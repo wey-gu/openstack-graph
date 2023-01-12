@@ -1,0 +1,2 @@
+CREATE EDGE IF NOT EXISTS created_from();
+INSERT EDGE created_from() VALUES "cirros_mod_from_volume-1" -> "volume-1":();

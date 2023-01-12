@@ -2,23 +2,48 @@ OpenStack Graph Demo
 
 I would like to create a demo project on how the graph tech helps Ops of the Infra, and I will start from a system like OpenStack to do the job.
 
-**Resource monitoring**
+**Resource monitoring**(push)
 
 We could watch the component where resources being created will naturally report to, in OpenStack, subscribing to the message bus on specific topics per each service (nova, neutron, Aodh and heat, etc) will do the job.
 
 Luckily, OpenStack Vitrage already provides this capability out of the box! With it, we could have the resources/alarms in a single graph view from [one vitrage API call](https://docs.openstack.org/vitrage/zed/contributor/vitrage-api.html#get-topology).
 
-We could do equivalent things for any other infra systems like K8s, too.
+We could do equivalent things for other infra systems like K8s.
 
 ![](https://user-images.githubusercontent.com/1651790/212026019-6f06683c-f3ad-4d32-bb88-56d2b4c129de.png)
 
+**Resource fetching**(pull)
+
+Vitrage collects the resource from the OpenStack cluster in a push way(from OpenStack to Entity Graph of Vitrage), while, we could also do it in a pull fashion, in a real-world case, it will be finally orchestrated by some DAG tools, but here I just create a script to demonstrate so.
+
+Currently, the script will fetch the below relations, which were not collected by vitrage for now.
+
+- glance_used_by:
+  `image -[:used_by]-> instance (get from instance)`
+- glance_created_from:
+  `image -[:created_from]-> volume (get from image)`
+- nova_keypair_used_by:
+  `keypair -[:used_by]-> instance (get from instance)`
+- cinder_snapshot_created_from:
+  `volume snapshot -[:created_from]-> volume (get from snapshot)`
+- cinder_volume_created_from:
+  `volume -[:created_from]-> volume snapshot (get from volume)`
+- cinder_volume_created_from:
+  `volume -[:created_from]-> image (get from volume)`
+
 **Graph ETL**
 
-I created a demo [utils/vitrage_to_graph.py](utils/vitrage_to_graph.py) to call vitrage API to generate full graph of the whole Infra, and then create DDL and DML queries to load data into NebulaGraph in Batch, this is only for demo/PoC purposes, in real world case, we could do streaming things in similar ways, too.
+- For the push pattern, I created a demo [utils/vitrage_to_graph.py](utils/vitrage_to_graph.py) to call vitrage API to generate a full graph of the whole Infra, and then create DDL and DML queries to load data into NebulaGraph in Batch, this is only for demo/PoC purposes, in a real-world case, we could do streaming things in similar ways, too.
 
-And the infra resources looks like this:
+And the infra resources look like this:
 
 ![](https://user-images.githubusercontent.com/1651790/212024265-ca374ea0-fd60-4e68-84e2-512f5f3ff9a6.png)
+
+- For the pull pattern, I created a demo script [utils/pull_resources_to_graph.py](utils/pull_resources_to_graph.py) to fetch nova, cinder, and glance API to construct Graph Data ready for NebulaGraph.
+
+And after this data is added on top of the previous graph, it looks like this:
+
+![](https://user-images.githubusercontent.com/1651790/212102993-849fd470-1e44-4706-af3f-dfb8500bd978.png)
 
 ## Demo
 
@@ -29,16 +54,21 @@ And the infra resources looks like this:
 The steps will be:
 
 - Call `utils/vitrage_to_graph.py` from OpenStack controller: node0 to generate a graph ready for NebulaGraph
+- Call `utils/pull_resources_to_graph.py` from OpenStack controller: node0 to have more data ready for NebulaGraph
 - Load data into NebulaGraph
 - Get insights from the Graph
 
 #### Parse resources from OpenStack
 
+##### The push pattern(vitrage)
+
 ```bash
 ssh stack@node0_ip
 cd devstack
 wget https://raw.githubusercontent.com/wey-gu/openstack-graph/main/utils/vitrage_to_graph.py
+wget https://raw.githubusercontent.com/wey-gu/openstack-graph/main/utils/pull_resources_to_graph.py.py
 python3 vitrage_to_graph.py
+python3 pull_resources_to_graph.py
 ```
 
 Then we could see new files generated:
@@ -56,15 +86,21 @@ Untracked files:
 	vertices/
 
 # sudo apt install tree -y
-$ tree edges vertices
 edges
 |-- attached.csv
 |-- attached.ngql
+|-- cinder.snapshot.created_from.ngql
+|-- cinder.volume.created_from.ngql
 |-- contains.csv
-`-- contains.ngql
+|-- contains.ngql
+|-- glance.image.created_from.ngql
+|-- glance.image.used_by.ngql
+`-- nova.keypair.used_by.ngql
 vertices
 |-- cinder.volume.csv
 |-- cinder.volume.ngql
+|-- cinder.volume_snapshot.ngql
+|-- glance.image.ngql
 |-- neutron.network.csv
 |-- neutron.network.ngql
 |-- neutron.port.csv
@@ -73,6 +109,7 @@ vertices
 |-- nova.host.ngql
 |-- nova.instance.csv
 |-- nova.instance.ngql
+|-- nova.keypair.ngql
 |-- nova.zone.csv
 |-- nova.zone.ngql
 |-- openstack.cluster.csv
@@ -82,7 +119,7 @@ vertices
 Where:
 
 - `schema.ngql` is the DDL schema
-- `edges` contains all edges, and the corresponding `ngql` file is the DML to load the data, `csv` is the raw data
+- `edges` contains all edges, and the corresponding `ngql` file is the DDL/DML to load the data, `csv` is the raw data
 - `vertices` contains all vertices, and the corresponding `ngql` file is the DML to load the data, `csv` is the raw data
 
 

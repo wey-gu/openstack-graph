@@ -1,0 +1,4 @@
+CREATE EDGE IF NOT EXISTS used_by();
+INSERT EDGE used_by() VALUES "key-0" -> "server-5":();
+INSERT EDGE used_by() VALUES "key-0" -> "server-4":();
+INSERT EDGE used_by() VALUES "key-0" -> "server-2":();

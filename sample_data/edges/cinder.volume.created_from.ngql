@@ -1,0 +1,6 @@
+CREATE EDGE IF NOT EXISTS created_from();
+INSERT EDGE created_from() VALUES "c9db7c2e-c712-49d6-8019-14b82de8542d" -> "cirros-0.5.2-x86_64-disk":();
+INSERT EDGE created_from() VALUES "99187cfc-ceea-496a-a572-a9bb14e586ed" -> "cirros-0.5.2-x86_64-disk":();
+INSERT EDGE created_from() VALUES "ffaeb199-47f4-4d95-89b2-97fba3c1bcfe" -> "cirros-0.5.2-x86_64-disk":();
+INSERT EDGE created_from() VALUES "volume-1" -> "cirros-0.5.2-x86_64-disk":();
+INSERT EDGE created_from() VALUES "image-c2f047f0-faf9-4985-ae4f-bbccf9ae25dc" -> "volume-1":();
