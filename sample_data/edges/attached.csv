@@ -1,4 +1,5 @@
 src,dst,edge_type
+volume-1,server-6,attached
 44a7a252-f149-43cc-8cf6-4572bec5500f,server-0,attached
 96db053b-fe6a-44b6-8041-06403b871953,server-1,attached
 6734d4a1-3342-4f9f-87b5-ca365689dd39,server-1,attached
@@ -11,3 +12,5 @@ volume-2,server-4,attached
 volume-2,server-3,attached
 d27355a1-23cd-4955-89d0-dd2515113444,server-4,attached
 56d2d86a-f071-4cf6-99fc-f3fce740444f,server-5,attached
+cfdad07c-5dac-41f7-9c7a-60cfaea0ba02,server-6,attached
+9520d817-aab2-4c32-a8e4-68e68a0ce6df,server-6,attached

@@ -11,9 +11,12 @@ private,344ebd38-374d-4dd5-bade-356d0cbf364c,contains
 public,2de6d2fa-6f3c-4435-a8de-5bd2c4653f0f,contains
 public,d27355a1-23cd-4955-89d0-dd2515113444,contains
 public,56d2d86a-f071-4cf6-99fc-f3fce740444f,contains
+public,9520d817-aab2-4c32-a8e4-68e68a0ce6df,contains
 shared,44a7a252-f149-43cc-8cf6-4572bec5500f,contains
 shared,96db053b-fe6a-44b6-8041-06403b871953,contains
+shared,cfdad07c-5dac-41f7-9c7a-60cfaea0ba02,contains
 node1,server-2,contains
 node1,server-5,contains
+node1,server-6,contains
 zone_a,node0,contains
 zone_b,node1,contains

@@ -6,3 +6,5 @@ vid,name,state,uuid,graph_index,ip_addresses
 344ebd38-374d-4dd5-bade-356d0cbf364c,344ebd38-374d-4dd5-bade-356d0cbf364c,ACTIVE,344ebd38-374d-4dd5-bade-356d0cbf364c,20,"['10.0.0.13', 'fd65:2b3b:e473:0:f816:3eff:fe18:e982']"
 d27355a1-23cd-4955-89d0-dd2515113444,d27355a1-23cd-4955-89d0-dd2515113444,ACTIVE,d27355a1-23cd-4955-89d0-dd2515113444,23,"['10.10.1.171', '2001:db8::1b']"
 56d2d86a-f071-4cf6-99fc-f3fce740444f,56d2d86a-f071-4cf6-99fc-f3fce740444f,ACTIVE,56d2d86a-f071-4cf6-99fc-f3fce740444f,27,"['10.10.1.219', '2001:db8::40']"
+cfdad07c-5dac-41f7-9c7a-60cfaea0ba02,cfdad07c-5dac-41f7-9c7a-60cfaea0ba02,ACTIVE,cfdad07c-5dac-41f7-9c7a-60cfaea0ba02,30,['192.168.233.49']
+9520d817-aab2-4c32-a8e4-68e68a0ce6df,9520d817-aab2-4c32-a8e4-68e68a0ce6df,ACTIVE,9520d817-aab2-4c32-a8e4-68e68a0ce6df,31,"['10.10.1.227', '2001:db8::243']"
