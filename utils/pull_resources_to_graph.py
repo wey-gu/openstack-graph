@@ -178,7 +178,7 @@ def generate_volumes_rels_ddl_dml():
         cinder_volume_snapshot_query_lines,
     )
     write_file(
-        "edges/cinder.volume.created_from.ngql",
+        "edges/cinder.volume.created_from.snapshot.ngql",
         cinder_volume_created_from_snapshot_query_lines,
     )
 
