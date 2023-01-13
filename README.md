@@ -47,7 +47,9 @@ And after this data is added on top of the previous graph, it looks like this:
 
 **How to leverage the Graph**
 
-WIP
+English: TBD
+
+Chinese: https://www.siwei.io/graph-enabled-infra-ops/
 
 ## Demo
 
