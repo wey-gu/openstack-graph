@@ -2,6 +2,8 @@
 
 I would like to create a demo project on how the graph tech helps Ops of the Infra, and I will start from a system like OpenStack to do the job.
 
+For similar work on K8s, see https://github.com/wey-gu/k8s-graph/.
+
 **Resource monitoring**(push)
 
 We could watch the component where resources being created will naturally report to, in OpenStack, subscribing to the message bus on specific topics per each service (nova, neutron, Aodh and heat, etc) will do the job.
